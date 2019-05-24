@@ -155,6 +155,117 @@ def USER1_PICK():
         USER1_PICK()
 
 
+
+
+###user2 function
+USER1_CHORES = {
+    "Clean Livingroom": 0.10,
+    "Pick up yard": 0.10,
+    "Bag trash": 0.20,
+    "Wash 2 dishes": 0.10,
+    "Fold towels": 0.10,
+    "Sweep": 0.10,
+    "Read 20 minutes": 0.25,
+    "Clean Bathroom": 0.10,
+    "CodeCombat 1 hour": 0.30,
+    "Clean your room": 0.10,
+    "Play 1 game of chess with Dad": 0.15,
+}  # 11 total options
+
+# user 2 Chore list
+USER2_CHORES = {
+    "Pick up toys from Livingroom": 0.05,
+    "Pick up bedroom": 0.10,
+    "Gather trash from around the house": 0.10,
+    "Put all dirty dishes in the sink": 0.10,
+    "1 game of chess with Dad or Big Brother": 0.15,
+    "Practice reading for 10 minutes": 0.20,
+    "Practice writing for 15 minutes": 0.25,
+}  # 7 total options
+
+
+def USER2_PICK():
+    ###for user2
+    print("Alright, I trust your excellent decision making ability!\n")
+    print("Here are your options:")
+    order = 1
+    for i in USER2_CHORES:
+        print(order, ".) ", i)
+        order += 1
+
+    print(" ")
+    CHORE_PICKED2 = input("What helpful task will you accomplish today???\n")
+    if CHORE_PICKED2 == "1":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[0]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[0]
+            )
+        )  ##code is intended for my young children, so hold the eye rolling
+
+    elif CHORE_PICKED2 == "2":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[1]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[1]
+            )
+        )
+
+    elif CHORE_PICKED2 == "3":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[2]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[2]
+            )
+        )
+
+    elif CHORE_PICKED2 == "4":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[3]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[3]
+            )
+        )
+
+    elif CHORE_PICKED2 == "5":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[4]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[4]
+            )
+        )
+
+    elif CHORE_PICKED2 == "6":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[5]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[5]
+            )
+        )
+
+    elif CHORE_PICKED2 == "7":
+        print("Okay that is a great choice!\n")
+        print("You have picked {} !\n".format(list(USER2_CHORES)[6]))
+        print(
+            "By doing this you will have earned {} cents!".format(
+                list(USER2_CHORES.values())[6]
+            )
+        )
+
+    else:
+        print(
+            "Sorry I did not understand what you typed, please enter a number from the list of chores"
+        )
+        print("*" * 10)
+        USER2_PICK()
+
+
 def main():
     import random
 
@@ -184,7 +295,7 @@ def main():
             randochore1 = random.choice(list(USER1_CHORES.keys()))
             randochorevalue1 = USER1_CHORES.get(randochore1)
             print(f"I need you to {randochore1}, this will pay ${randochorevalue1}0")
-        if ARETE_PICK == "2":
+        elif ARETE_PICK == "2":
             USER1_PICK()
         else:
             print("Sorry I only likes 1s and 2s, try that instead :)")
@@ -200,6 +311,9 @@ def main():
             randochore2 = random.choice(list(USER2_CHORES.keys()))
             randochorevalue2 = USER2_CHORES.get(randochore2)
             print(f"I need you to {randochore2}, this will pay ${randochorevalue2}0")
+
+        elif ARETE_PICK == "2":
+            USER2_PICK()
         else:
             print("Sorry I only likes 1s and 2s, try that instead :)")
             print("*" * 10)
@@ -211,12 +325,3 @@ def main():
 
 
 main()
-      if ARETE_PICK == "1":
-          randochore2 = random.choice(list(USER2_CHORES.keys()))
-          randochorevalue2 = USER2_CHORES.get(randochore2)
-          print(f"I need you to {randochore2}, this will pay ${randochorevalue2}")
-  else:
-      print("Sorry I only likes 1s and 2s, try that instead :)")
-      print("*"* 10)
-      main()
-print(main())
