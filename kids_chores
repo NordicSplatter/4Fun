@@ -1,0 +1,84 @@
+##chore app goals: 
+#1.) 2 user PROFILEs
+#2.) Random chore generator to pull from dictionary, 1 dictionary for each child
+#3.) Option to physically select a chore instead of randomize
+#4.)"Accept to do chore" and "Decline to Rerun" buttons
+#5. ***maybe*** Stores the total amount earned from the chores to each user, even when not in use
+#6.) ***maybe***resets totals one every 7 days
+#clear memory button
+def main():
+  import random
+  
+
+  # 2 user PROFILEs
+  USER1 = "Charles"
+  USER2 = "Cambria"
+
+  # user 1 chore list, key is the chore, value is the payment
+  # I prioritize educational activities, therefore I pay more for them
+  USER1_CHORES = {
+      "Clean Livingroom": 0.10,
+      "Pick up yard": 0.10,
+      "Bag trash": 0.20,
+      "Wash 2 dishes": 0.10,
+      "Fold towels": 0.10,
+      "Sweep": 0.10,
+      "Read 20 minutes": 0.25,
+      "Clean Bathroom": 0.10,
+      "CodeCombat 1 hour": 0.30,
+      "Clean your room": 0.10,
+      "Play 1 game of chess with Dad": 0.15,
+  }  # 11 total options
+
+  # user 2 Chore list
+  USER2_CHORES = {
+      "Pick up toys from Livingroom": 0.05,
+      "Pick up bedroom": 0.10,
+      "Gather trash from around the house": 0.10,
+      "Put all dirty dishes in the sink": 0.10,
+      "1 game of chess with Dad or Big Brother": 0.15,
+      "Practice reading for 10 minutes": 0.20,
+      "Practice writing for 15 minutes": 0.25,
+  }  # 7 total options
+
+
+  ##>>> valueOfThatKey=dict.get(randomDictionaryChoice)
+  ##>>> print(valueOfThatKey)
+
+
+  ## Arete is a greek term for the spirit of excellence, goodness, valour
+
+  print("\nHello there, I am Arete")
+  print("Are you Charles or are you Cambria\n")
+
+  # user input to figure out the PROFILE
+  PROFILE = input("Charles(1), Cambria(2)\n")
+  # user input to  decide random chore or would you like to pick your own?
+  if PROFILE == "1":
+      print("Hello Charles it is good to talk to you today :)")
+      print("How would you like to handle your responsibilities today?\n")
+
+      # nested if statement to allow for random chore generation or a selection
+      ARETE_PICK = input("Arete knows best(1), Let me pick(2)\n")
+      if ARETE_PICK == "1":
+
+        ###>>> valueOfThatKey=dict.get(randomDictionaryChoice)
+  ##>>> print(valueOfThatKey)
+          randochore1 = random.choice(list(USER1_CHORES.keys()))
+          randochorevalue1 =(USER1_CHORES.get(randochore1))
+          print(f"I need you to {randochore1}, this will pay ${randochorevalue1}")
+
+  elif PROFILE == "2":
+      print("Hello Cambria, I am very happy to talk to you :)")
+      print("How would you like to be helpful today?\n")
+
+      ARETE_PICK = input("Arete knows best(1), Let me pick(2)\n")
+      if ARETE_PICK == "1":
+          randochore2 = random.choice(list(USER2_CHORES.keys()))
+          randochorevalue2 = USER2_CHORES.get(randochore2)
+          print(f"I need you to {randochore2}, this will pay ${randochorevalue2}")
+  else:
+      print("Sorry I only likes 1s and 2s, try that instead :)")
+      print("*"* 10)
+      main()
+print(main())
